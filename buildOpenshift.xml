@@ -15,9 +15,9 @@
 
         <gitcloneapplication
             userName="daniel_mostwanted364@hotmail.com"
-            password="daniel123"
-            domainName="danielhdz"
-            applicationName="GoServer"
+            password="5433290364"
+            domainName="danielhdz364"
+            applicationName="tienda2"
             privateKeyFile="./ssh/id_rsa"
             path="${gitlocalpath}"
         />
@@ -38,9 +38,9 @@
 
         <gitpushapplication
             userName="daniel_mostwanted364@hotmail.com"
-            password="daniel123"
-            domainName="danielhdz"
-            applicationName="tienda"
+            password="5433290364"
+            domainName="danielhdz364"
+            applicationName="tienda2"
             privateKeyFile="./ssh/id_rsa"
             path="${gitlocalpath}"
         />
