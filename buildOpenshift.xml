@@ -18,7 +18,7 @@
             password="${password}"
             domainName="danielhdz364"
             applicationName="tienda2"
-            privateKeyFile="./ssh/id_rsa"
+            privateKeyFile="../ssh/id_rsa"
             path="${gitlocalpath}"
         />
 
@@ -44,7 +44,7 @@
             password="${password}"
             domainName="danielhdz364"
             applicationName="tienda2"
-            privateKeyFile="./ssh/id_rsa"
+            privateKeyFile="../ssh/id_rsa"
             path="${gitlocalpath}"
         />
 
