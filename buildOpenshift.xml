@@ -24,11 +24,15 @@
 
         <echo> -------------------------------------------------------- </echo>
         <echo>Mover Archivos</echo>
-        <move todir="./go-server-openshift/">
-          <fileset dir="${gitlocalpath}/">
+        <move todir="${gitlocalpath}/">
+          <fileset dir="./go-server-openshift/">
             <include name="**/*"/>
           </fileset>
         </move>
+
+    <echo> -------------------------------------------------------- </echo>
+     <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
+     <delete file="${gitlocalpath}/index.php"></delete>
 
         <echo> -------------------------------------------------------- </echo>
         <echo> ------------------ Add, Commit-------------------- </echo>
