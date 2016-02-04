@@ -23,10 +23,6 @@
         />
 
         <echo> -------------------------------------------------------- </echo>
-        <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
-        <delete dir="${gitlocalpath}/"></delete>
-
-        <echo> -------------------------------------------------------- </echo>
         <echo>Mover Archivos</echo>
         <move todir="./go-server-openshift/">
           <fileset dir="${gitlocalpath}/">
