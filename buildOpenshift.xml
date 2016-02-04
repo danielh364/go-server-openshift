@@ -29,7 +29,7 @@
 
         <echo> -------------------------------------------------------- </echo>
         <echo>Mover Archivos</echo>
-        <move dir="./go-server-openshift/" todir="${gitlocalpath}/tienda2/"/>
+        <move file="./go-server-openshift/" todir="${gitlocalpath}/tienda2/"/>
 
         <echo> -------------------------------------------------------- </echo>
         <echo> ------------------ Add, Commit-------------------- </echo>
