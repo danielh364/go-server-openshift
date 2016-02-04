@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <title>GoServer - Backend</title>
+  </head>
+  <body>
+        <header><h1>Go-Server</h1></header>
+    <div class="body"></div>
+		<div class="grad"></div>
+
+		<div class="header">
+			<div>Go<span> Server</span></div>
+		</div>
+
+		<br>
+		<div class="login">
+      <form id="formulariologin">
+				<input type="text" id="user" placeholder="Usuario" name="user"><br>
+				<input type="password" id="password" placeholder="Contraseña" name="password"><br>
+				<input type="button" onclick="loginAjax();" value="Acceder">
+      </form>
+		</div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/comprobarsession.js"></script>
+  </body>
+</html>
