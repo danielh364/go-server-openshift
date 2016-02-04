@@ -18,7 +18,7 @@
             password="${password}"
             domainName="danielhdz364"
             applicationName="tienda2"
-            privateKeyFile="../ssh/id_rsa"
+            privateKeyFile="/var/lib/openshift/56b217b12d52713fce000012/app-root/data/workspace/ssh/id_rsa"
             path="${gitlocalpath}"
         />
 
@@ -34,6 +34,7 @@
      <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
      <delete file="${gitlocalpath}/index.php"></delete>
 
+
         <echo> -------------------------------------------------------- </echo>
         <echo> ------------------ Add, Commit-------------------- </echo>
         <git dir="${gitlocalpath}" command="add" options="*" />
@@ -44,7 +45,7 @@
             password="${password}"
             domainName="danielhdz364"
             applicationName="tienda2"
-            privateKeyFile="../ssh/id_rsa"
+            privateKeyFile="/var/lib/openshift/56b217b12d52713fce000012/app-root/data/workspace/ssh/id_rsa"
             path="${gitlocalpath}"
         />
 
