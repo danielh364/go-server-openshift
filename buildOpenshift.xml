@@ -30,8 +30,7 @@
         <echo>Mover Archivos</echo>
         <move todir="./go-server-openshift/">
           <fileset dir="${gitlocalpath}/">
-            <include name="**/*.*"/>
-            <exclude name="**/*"/>
+            <include name="**/*"/>
           </fileset>
         </move>
 
