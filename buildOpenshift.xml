@@ -24,12 +24,16 @@
 
         <echo> -------------------------------------------------------- </echo>
         <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
-        <delete dir="${gitlocalpath}/src"></delete>
-        <delete file="${gitlocalpath}/pom.xml"></delete>
+        <delete dir="${gitlocalpath}/"></delete>
 
         <echo> -------------------------------------------------------- </echo>
         <echo>Mover Archivos</echo>
-        <move file="./go-server-openshift/" todir="${gitlocalpath}/tienda2/"/>
+        <move todir="./go-server-openshift/">
+          <fileset dir="${gitlocalpath}/">
+            <include name="**/*.*"/>
+            <exclude name="**/*"/>
+          </fileset>
+        </move>
 
         <echo> -------------------------------------------------------- </echo>
         <echo> ------------------ Add, Commit-------------------- </echo>
