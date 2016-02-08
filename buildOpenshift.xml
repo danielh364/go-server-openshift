@@ -53,7 +53,7 @@
             password="${password}"
             domainName="danielhdz364"
             applicationName="tienda2"
-            privateKeyFile="/var/lib/openshift/56b217b12d52713fce000012/app-root/data/workspace/ssh/id_rsa"
+            privateKeyFile="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/ssh/id_rsa"
             path="${gitlocalpath}"
         />
 
