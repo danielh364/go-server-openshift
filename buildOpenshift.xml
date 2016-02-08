@@ -14,13 +14,21 @@
         <mkdir dir="${gitlocalpath}" />
 
         <gitcloneapplication
-            userName="daniel_mostwanted364@hotmail.com"
+            userName="danielhdz364@gmail.com"
             password="${password}"
-            domainName="danielhdz364"
-            applicationName="tienda2"
-            privateKeyFile="/var/lib/openshift/56b217b12d52713fce000012/app-root/data/workspace/ssh/id_rsa"
+            domainName="danielh364"
+            applicationName="tienda"
+            privateKeyFile="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/ssh/id_rsa"
             path="${gitlocalpath}"
         />
+
+
+              <echo> Borrando y Renombrando conexion de BD </echo>
+              <delete dir="./go-server-openshift/bd/conexion.php"/>
+              <move file="./go-server-openshift/bd/conexion-servidor.php" tofile="./go-server-openshift/bd/conexion.php"/>
+              <delete dir="./go-server-openshift/administrador/bd/conexion.php"/>
+              <move file="./go-server-openshift/administrador/bd/conexion-servidor.php" tofile="./go-server-openshift/administrador/bd/conexion.php"/>
+
 
         <echo> -------------------------------------------------------- </echo>
         <echo>Mover Archivos</echo>

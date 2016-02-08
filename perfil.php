@@ -252,7 +252,7 @@
                                     <div class="col-md-8">
                                         <input class="btn btn-primary" name="buttonformulario"  value="Guardar Cambios" onclick="modificarPerfil();">
                                         <span></span>
-                                        <a onclick="window.location.href = '/go-server/index.html'"><input type="reset" class="btn btn-default" value="Cancelar"></a>
+                                        <a onclick="window.location.href = '/index.html'"><input type="reset" class="btn btn-default" value="Cancelar"></a>
                                     </div>
                                 </div>
                             </form>
