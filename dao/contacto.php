@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('./PHPMailer-master/class.phpmailer.php');
+require_once('./PHPMailer/class.phpmailer.php');
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
