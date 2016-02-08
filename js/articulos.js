@@ -325,7 +325,55 @@ function enviarCarrito() {
 }
 
 function enviarEmailContacto() {
-    swal("Email Enviado", "pronto el soporte se pondrá en contacto contigo", "success");
+
+
+      var comprobar = true;
+
+      var nombre = document.getElementById('namecontact').value;
+      var email = document.getElementById('emailcontact').value;
+      var mensaje = document.getElementById('messagecontact').value;
+
+
+      var validarCorreo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (nombre === "" && email === "" && mensaje === "" && comprobar === true) {
+          sweetAlert("Error", "No pueden estar todos los campos vacios.", "error");
+          comprobar = false;
+      }
+      if (nombre === "" && comprobar === true) {
+          sweetAlert("Error", "Nombre: no puede estar vacio.", "error");
+          comprobar = false;
+      }
+
+      if (email === "" && comprobar === true) {
+          sweetAlert("Error", "Email: no puede estar vacio.", "error");
+          comprobar = false;
+      }
+
+      if (!validarCorreo.test(email) && comprobar === true) {
+          sweetAlert("Error", "Email: Formato incorrecto.", "error");
+          comprobar = false;
+      }
+
+      if (mensaje === "" && comprobar === true) {
+          sweetAlert("Error", "Mensaje: no puede estar vacio.", "error");
+          comprobar = false;
+      }
+      if (comprobar === true) {
+          var dataString = $('#contact_form').serialize();
+          $.ajax({
+              type: "POST",
+              url: "./dao/contacto.php",
+              data: dataString,
+              success: function (data) {
+                if(data!=="Error al enviar el Email"){
+                    swal("", "" + data + "", "success");
+                }else{
+                  sweetAlert("Error", data, "error");
+                }
+              }
+          });
+      }
 }
 
 function efectoAnyadirProducto() {

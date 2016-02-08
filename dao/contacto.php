@@ -1,5 +1,9 @@
 <?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
 
+$mensaje='Nombre:' .$name. 'Email:'.$email. '/n'.$message;
 
 require_once('./PHPMailer/class.phpmailer.php');
 
@@ -7,25 +11,23 @@ require_once('./PHPMailer/class.phpmailer.php');
 $mail = new PHPMailer;
 $mail->CharSet="UTF-8";
 //Set who the message is to be sent from
-$mail->setFrom('daniel_mostwanted364@hotmail.com');
+$mail->setFrom('danielhdz364@gmail.com');
 //Set an alternative reply-to address
 $mail->addReplyTo('danielhdz364@gmail.com');
 //Set who the message is to be sent to
 $mail->addAddress('danielhdz364@gmail.com');
 //Set the subject line
-$mail->Subject = 'PHPMailer mail() test';
+$mail->Subject = 'Seccion: Contacto';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML("contenido...");
+$mail->msgHTML($mensaje);
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 //Attach an image file
-
-
 //send the message, check for errors
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
+    echo "Error al enviar el Email";
 } else {
-    echo "Message sent!";
+    echo "Email Enviado!";
 }
 ?>
