@@ -24,10 +24,10 @@
 
 
               <echo> Borrando y Renombrando conexion de BD </echo>
-              <delete dir="./go-server-openshift/bd/conexion.php"/>
-              <move file="./go-server-openshift/bd/conexion-servidor.php" tofile="./go-server-openshift/bd/conexion.php"/>
-              <delete dir="./go-server-openshift/administrador/bd/conexion.php"/>
-              <move file="./go-server-openshift/administrador/bd/conexion-servidor.php" tofile="./go-server-openshift/administrador/bd/conexion.php"/>
+              <delete dir="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/go-server-openshift/bd/conexion.php"/>
+              <move file="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/go-server-openshift/bd/conexion-servidor.php" tofile="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/go-server-openshift/bd/conexion.php"/>
+              <delete dir="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/go-server-openshift/administrador/bd/conexion.php"/>
+              <move file="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/go-server-openshift/administrador/bd/conexion-servidor.php" tofile="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/go-server-openshift/administrador/bd/conexion.php"/>
 
 
         <echo> -------------------------------------------------------- </echo>
