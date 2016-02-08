@@ -3,7 +3,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 
-$mensaje='Nombre:' .$name. ' <br> Email:'.$email. ' <br> '.$message;
+$mensaje='Nombre:' .$name. '<br><br> Email:<br> '.$email. ' <br><br>Mensaje:<br>'.$message;
 
 require_once('./PHPMailer/class.phpmailer.php');
 
