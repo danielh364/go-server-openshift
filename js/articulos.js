@@ -257,13 +257,15 @@ function CerrarModal() {
 function tablacarrito() {
     var divtabla = document.getElementById('tablacarro');
     divtabla.innerHTML = "";
+      document.getElementById("papelera").style.display = 'block';
     if (carrito !== null && carrito.articulos.length >= 1) {
         for (i = 0; i < carrito.articulos.length; i++) {
-            divtabla.innerHTML += '<tr class="cart_item"><td class="product-remove"><a title="Remove this item" class="remove" href="#"  onclick="borrarArticulo(' + i + ');">×</a></td><td class="product-thumbnail"><img ondragstart="setdragitem(this, event);" ondrag="dodrag();" ondragend="cleardragitem();" width="145" height="145" class="shop_thumbnail" src="img/' + carrito.articulos[i].imagen + '"></td><td class="product-name"> <div class="expander" id="tbox">' + carrito.articulos[i].titulo + '</div><p class="texttoggle"> <span class="clasenegrita">Descripcion del producto:</span> ' + carrito.articulos[i].descripcion + '</p></td><td class="product-price"><span class="amount">' + carrito.articulos[i].precio + ' €</span></td><td class="product-quantity"><div class="quantity buttons_added"> <input type="button" class="minus" value="-" onclick="restarunidad(\'' + carrito.articulos[i].titulo + '\');" /><input class="valorunidadestabla" type="text"  name="numericInput" size="1" min="0" max="2" value="' + carrito.articulos[i].unidades + '" disabled /> <input type="button" class="plus" value="+" onclick="sumarunidad(\'' + carrito.articulos[i].titulo + '\');" />   </div>  </td><td class="product-subtotal"><span class="unidadesarticulo">' + parseFloat(carrito.articulos[i].precio) * parseFloat(carrito.articulos[i].unidades) + ' €</span></td></tr>';
+            divtabla.innerHTML += '<tr class="cart_item"><td class="product-remove"><a title="Remove this item" class="remove" href="#"  onclick="borrarArticulo(' + i + ');">×</a></td><td class="product-thumbnail"><img name="producto|'+i+'" ondragstart="setdragitem(this, event);" ondragend="cleardragitem();" width="145" height="145" class="shop_thumbnail" src="img/' + carrito.articulos[i].imagen + '"></td><td class="product-name"> <div class="expander" id="tbox">' + carrito.articulos[i].titulo + '</div><p class="texttoggle"> <span class="clasenegrita">Descripcion del producto:</span> ' + carrito.articulos[i].descripcion + '</p></td><td class="product-price"><span class="amount">' + carrito.articulos[i].precio + ' €</span></td><td class="product-quantity"><div class="quantity buttons_added"> <input type="button" class="minus" value="-" onclick="restarunidad(\'' + carrito.articulos[i].titulo + '\');" /><input class="valorunidadestabla" type="text"  name="numericInput" size="1" min="0" max="2" value="' + carrito.articulos[i].unidades + '" disabled /> <input type="button" class="plus" value="+" onclick="sumarunidad(\'' + carrito.articulos[i].titulo + '\');" />   </div>  </td><td class="product-subtotal"><span class="unidadesarticulo">' + parseFloat(carrito.articulos[i].precio) * parseFloat(carrito.articulos[i].unidades) + ' €</span></td></tr>';
       }
     } else {
         var divinfo = document.getElementById('sinarticulos');
         divinfo.innerHTML = "No hay articulos en el carrito";
+        document.getElementById("papelera").style.display = 'none';
     }
 
     $('.expander').click(function(){

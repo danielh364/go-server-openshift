@@ -25,6 +25,11 @@ img {
   cursor : pointer;
 }
 
+#papelera{
+  display:none;
+
+}
+
 .expander{
   cursor:pointer;
 }
