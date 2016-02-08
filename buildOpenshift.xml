@@ -21,14 +21,6 @@
             privateKeyFile="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/ssh/id_rsa"
             path="${gitlocalpath}"
         />
-        <echo> Borrando  conexion de BD </echo>
-        <delete dir="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
-        <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
-
-        <echo>Renombrando conexion de BD </echo>
-        <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
-        <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
-
 
         <echo> -------------------------------------------------------- </echo>
         <echo>Mover Archivos</echo>
@@ -37,6 +29,15 @@
             <include name="**/*"/>
           </fileset>
         </move>
+        
+        <echo> Borrando  conexion de BD </echo>
+        <delete dir="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
+        <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
+
+        <echo>Renombrando conexion de BD </echo>
+        <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
+        <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
+
 
     <echo> -------------------------------------------------------- </echo>
      <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
