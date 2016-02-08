@@ -1,9 +1,10 @@
 <?php
-// the message
-$msg = "Prueba";
+$para      = 'danielhdz364@gmail.com';
+$titulo    = 'El título';
+$mensaje   = 'Hola';
+$cabeceras = 'From: danielhdz364@gmail.com' . "\r\n" .
+    'Reply-To: danielhdz364@gmail.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
-$msg = wordwrap($msg,1000);
-
-// send email
-mail("danielhdz364@gmail.com","Seccion: Contacto",$msg);
+mail($para, $titulo, $mensaje, $cabeceras);
 ?>
