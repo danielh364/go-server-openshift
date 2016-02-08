@@ -29,14 +29,13 @@
             <include name="**/*"/>
           </fileset>
         </move>
-
         <echo> Borrando  conexion de BD </echo>
-        <delete dir="${gitlocalpath}/bd/conexion.php"/>
-        <delete dir="${gitlocalpath}/administrador/bd/conexion.php"/>
+        <delete dir="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
+        <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
 
         <echo>Renombrando conexion de BD </echo>
-        <move file="${gitlocalpath}/bd/conexion-servidor.php" tofile="${gitlocalpath}/bd/conexion.php"/>
-        <move file="${gitlocalpath}/administrador/bd/conexion-servidor.php" tofile="${gitlocalpath}/administrador/bd/conexion.php"/>
+        <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
+        <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
 
 
     <echo> -------------------------------------------------------- </echo>
