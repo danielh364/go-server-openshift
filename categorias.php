@@ -1,5 +1,5 @@
 <?php
-include '/bd/conexion.php';
+include './bd/conexion.php';
 mysql_select_db("goserver") or die('No se pudo seleccionar la base de datos');
 // Realizar una consulta MySQL
 $query = 'SELECT * FROM categorias';
