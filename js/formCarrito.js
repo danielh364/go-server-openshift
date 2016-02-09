@@ -60,7 +60,7 @@ function showNCuentaForm() {
         $('.register-footer').fadeOut('fast', function () {
             $('.login-footer').fadeIn('fast');
         });
-        $('.modal-title').html('Usuario registrado');
+        $('.modal-title').html('Numero de Cuenta');
     });
     $('.error').removeClass('alert alert-danger').html('');
 }

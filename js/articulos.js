@@ -303,13 +303,20 @@ function pagarUsuarioRegistrado() {
 }
 
 function asignaryenviarpago(){
-      var comprobar = true;
+  var validarncuenta = /^[0-9]{20}$/;
+    var comprobar = true;
     var ncuenta = document.getElementById('ncuenta').value;
 
     if (ncuenta == "" && comprobar == true) {
         shakeModalError("Numero de Cuenta: No puede estar vacio.");
         comprobar = false;
     }
+
+    if (!validarncuenta.test(ncuenta) && comprobar == true){
+      shakeModalError("Numero de Cuenta: Incorrecto.");
+      comprobar=false;
+    }
+
 if(comprobar===true){
 
   setTimeout(function () {
@@ -317,7 +324,7 @@ if(comprobar===true){
   }, 650);
   carrito.ncuenta=ncuenta;
   enviarCarrito();
-}
+  }
 }
 
 
