@@ -338,7 +338,7 @@ function enviarCarrito() {
                 tablacarrito();
                 sessionStorage.setItem('tcarrito', JSON.stringify(carrito));
               }else{
-                  sweetAlert("Error", data, "error");
+                  sweetAlert("Error", "Se ha generado un error al realizar el pago, Consulte con su Banco.", "error");
               }
 
             }
