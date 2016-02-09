@@ -286,31 +286,51 @@ if($(this).attr('class')==='expander mostrando'){
 
 
 function pagarUsuarioRegistrado() {
-
-
     $.ajax({
         type: "POST",
         url: "seguridad.php",
         success: function (data) {
-            enviarCarrito();
+              if (carrito.total > 0) {
+            openNCuentaModal();  } else {
+                  sweetAlert("Error", "No tienes ningún articulo en la cesta", "error");
+              }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             /*alert("Status: " + textStatus); alert("Error: " + errorThrown);*/
             openLoginModal();
         }
     });
-
-
 }
 
+function asignaryenviarpago(){
+      var comprobar = true;
+    var ncuenta = document.getElementById('ncuenta').value;
+
+    if (ncuenta == "" && comprobar == true) {
+        shakeModalError("Numero de Cuenta: No puede estar vacio.");
+        comprobar = false;
+    }
+if(comprobar===true){
+
+  setTimeout(function () {
+      $('#loginModal').modal('toggle');
+  }, 650);
+  carrito.ncuenta=ncuenta;
+  enviarCarrito();
+}
+}
+
+
+
 function enviarCarrito() {
-    if (carrito.total > 0) {
+
         enviarcarrito = JSON.stringify(carrito);
         $.ajax({
             type: "POST",
             url: "./dao/carritoDAO.php",
             data: 'datos=' + enviarcarrito,
             success: function (data) {
+              alert(data);
                 swal("", "Pago realizado con éxito", "success");
                 carrito.articulos = [];
                 totalcarrito();
@@ -319,9 +339,6 @@ function enviarCarrito() {
                 sessionStorage.setItem('tcarrito', JSON.stringify(carrito));
             }
         });
-    } else {
-        sweetAlert("Error", "No tienes ningún articulo en la cesta", "error");
-    }
 }
 
 function enviarEmailContacto() {

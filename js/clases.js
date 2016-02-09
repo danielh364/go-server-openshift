@@ -23,6 +23,7 @@ function Carrito(numero) {
     this.fecha = new Date();
     this.articulos = [];
     this.total;
+    this.ncuenta;
 }
 
 Carrito.prototype.eliminarCarro = function () {
