@@ -12,26 +12,47 @@ $(document).ready(function () {
     $('.funcionmodalcarrito').click(CarritoModal);
     comprobarsession();
 
-     jQuery("#arrow-up").click( function(){
-       arrowscroll();
-     });
+    $("#arrow-up").hide();
+  	//$("#arrow-down").hide();
 
-     jQuery("#arrow-down").click( function(){
-       arrowscroll();
-     });
+  	// fade in #arrow-up
+  	$(function () {
+          var altura = $(document).height();
+  		$(window).scroll(function () {
+  			if ($(this).scrollTop() > 100) {
+  				$('#arrow-up').fadeIn();
+  			} else {
+  				$('#arrow-up').fadeOut();
+  			};
+
+              if ($(this).scrollTop() + $(this).height() == altura) {
+  				$('#arrow-down').fadeOut();
+  			} else {
+  				$('#arrow-down').fadeIn();
+  			};
+  		});
+
+
+  		// scroll body to 0px on click
+  		$('#arrow-up').click(function () {
+              var marco = Math.floor($(window).scrollTop() / 800);
+              marco = (marco) *600;
+  			$('body,html').animate({
+  				scrollTop: marco+"px"
+  			}, 800);
+  			return false;
+  		});
+
+          $('#arrow-down').click(function () {
+              var marco = Math.floor($(window).scrollTop() / 800);
+              marco = (marco + 2 ) *600;
+  			$('body,html').animate({
+  				scrollTop: marco+"px"
+  			}, 800);
+  			return false;
+  		});
+  	});
+
 
 
   });
-
-function arrowscroll(){
-arrow++;
-  if(arrow===1){
-      $("#arrow-up").addClass("disabled");
-  }
-  if(arrow===3){
-      $("#arrow-down").addClass("disabled");
-  }
-  $('html, body').animate({
-       scrollTop: $("#slide-"+arrow).offset().top
-   }, 2000);
-}
