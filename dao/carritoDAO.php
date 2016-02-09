@@ -47,21 +47,20 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 //execute post
 $result = curl_exec($ch);
 
-
 if(!curl_errno($ch))
 {
  $info = curl_getinfo($ch);
 
 if($info['http_code']==200){
 
-  $sql = "update pedidos set Pagado='SI' where idPedido='.$idp'";
+  $sql = "update pedidos set Pagado='SI' where idPedido='$idp'";
   if (!($resul = mysql_query($sql)))
       die(mysql_error());
 
   mysql_close($link);
 echo "Pago realizado con exito";
 }else{
-  echo "Se ha generado un error al realizar el pago.";
+  echo "Se ha generado un error al realizar el pago, Consulte con su Banco.";
 }
 }
 //close connection
