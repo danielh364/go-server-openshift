@@ -34,7 +34,7 @@ while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 $cuentaOrigen = $ocarrito->ncuenta;
 $cuentaDestino ='20002000749876543211';
 $importe = $ocarrito->total;
-$concepto = 'GoServer Servicio Nº '.$idp;
+$concepto = 'GoServer Servicio Nº '.$idp[0];
 $pin = '2045';
 
 $data = json_encode(array("cuentaOrigen" => "$cuentaOrigen", "cuentaDestino" => "$cuentaDestino","importe" => "$importe", "concepto" => "$concepto", "pin" => "$pin"));
@@ -55,7 +55,7 @@ if(!curl_errno($ch))
 
 if($info['http_code']==200){
 
-  $sql = "update pedidos set Pagado='SI' where idPedido='$idfactura'";
+  $sql = "update pedidos set Pagado='SI' where idPedido='.$idp[0]'";
   if (!($resul = mysql_query($sql)))
       die(mysql_error());
 
