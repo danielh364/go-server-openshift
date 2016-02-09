@@ -12,11 +12,23 @@ $ocarrito = json_decode($carrito);
 $carritoFecha = $ocarrito->fecha;
 $carritoTotal = $ocarrito->total;
 
+$query = "insert into  pedidos (usuario, fecha, total) values ('$usuario' , '$carritoFecha', '$carritoTotal')";
+$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+
+
+$query= 'select MAX(idpedido) from pedidos where usuario='$usuario' and total='$carritoTotal'';
+$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+$row = mysql_fetch_row($result);
+$idfactura= $row[0];
+
 $cuentaOrigen = $ocarrito->ncuenta;
 $cuentaDestino ='20002000749876543211';
 $importe = $ocarrito->total;
-$concepto = 'GoServer Alquiler-Servicio';
+$concepto = 'GoServer Servicio Nº '.$idfactura;
 $pin = '2045';
+
+
+
 
 $data = json_encode(array("cuentaOrigen" => "$cuentaOrigen", "cuentaDestino" => "$cuentaDestino","importe" => "$importe", "concepto" => "$concepto", "pin" => "$pin"));
 
@@ -37,11 +49,9 @@ if(!curl_errno($ch))
 if($info['http_code']==200){
 
 
-  $query = "insert into  pedidos (usuario, fecha, total) values ('$usuario' , '$carritoFecha', '$carritoTotal')";
+  $query = "update pedidos set Pagado='Si' where idPedido='$idfactura'";
   $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
   // Cerrar la conexión
-
-
   foreach ($ocarrito->articulos as $articulo) {
 
       $sql = "insert into  detallepedidos (idpedido, idarticulo, unidades,precio) select (select MAX(idpedido) from pedidos where usuario='$usuario' and total='$carritoTotal') as idpedido ,(select idarticulo from articulos where titulo='$articulo->titulo')  as idarticulo,(select '$articulo->unidades') as unidades, (select '$articulo->precio')  as precio from dual";
@@ -52,10 +62,8 @@ if($info['http_code']==200){
   mysql_close($link);
 echo "Pago realizado con exito";
 }else{
-  echo "error generado";
+  echo "Se ha generado un error al realizar el pago.";
 }
-echo 'CODE '.$info['http_code'];
- echo '  Se tardó ' . $info['total_time'] . ' segundos en enviar la petición a ' . $info['url'];
 }
 //close connection
 curl_close($ch);

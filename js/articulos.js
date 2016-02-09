@@ -330,13 +330,17 @@ function enviarCarrito() {
             url: "./dao/carritoDAO.php",
             data: 'datos=' + enviarcarrito,
             success: function (data) {
-              alert(data);
-                swal("", "Pago realizado con éxito", "success");
+              if(data==="Pago realizado con exito"){
+                swal("",data, "success");
                 carrito.articulos = [];
                 totalcarrito();
                 contararticuloscarrito();
                 tablacarrito();
                 sessionStorage.setItem('tcarrito', JSON.stringify(carrito));
+              }else{
+                  sweetAlert("Error", data, "error");
+              }
+
             }
         });
 }
