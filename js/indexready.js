@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
     $('.loginform').on('click',showLoginForm);
     $('.registerform').on('click',showRegisterForm);
-});
+
     comprobarsession();
 
     $("#arrow-up").hide();
