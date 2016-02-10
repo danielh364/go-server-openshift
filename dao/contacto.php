@@ -1,4 +1,6 @@
 <?php
+include 'contactoUsuario.php';
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
@@ -11,7 +13,6 @@ require_once('./PHPMailer/class.phpmailer.php');
 $mail = new PHPMailer;
 $mail->CharSet="UTF-8";
 //Set who the message is to be sent from
-$mail->From = "notreply@goserver.com";
 $mail->setFrom('danielhdz364@gmail.com');
 //Set who the message is to be sent to
 $mail->addAddress('danielhdz364@gmail.com');
@@ -32,7 +33,7 @@ if (!$mail->send()) {
     $mail->ClearAllRecipients();
     $mail->ClearReplyTos();
     $mail->ClearCustomHeaders();
-    $mail->From = "notreply@goserver.com";
+
     $mail->setFrom($email);
     //Set who the message is to be sent to
     $mail->addAddress($email);
