@@ -115,7 +115,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="shopping-item">
+                        <div class="shopping-item" ondragenter='handledragenter(this, event);' ondragover='handledragover(this, event);' ondrop='handledrop(this, event);'>
 
 
                             <li class="dropdown">
@@ -277,6 +277,7 @@
         <script src="js/bootstrap.min.js"></script>
 
         <!-- jQuery sticky menu -->
+        <!-- build:js ./productos.min.js -->
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/login-register.js"></script>
@@ -284,7 +285,8 @@
         <script src="js/clases.js"></script>
         <script src="js/categorias.js"></script>
         <script src="js/articulos.js"></script>
-
+        <script src="js/draganddroparticulos.js"></script>
+        <!-- endbuild -->
         <!-- jQuery easing -->
         <script src="js/jquery.easing.1.3.min.js"></script>
 

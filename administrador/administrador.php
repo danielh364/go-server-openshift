@@ -388,6 +388,7 @@
         <script src="js/bootstrap.min.js"></script>
 
         <!-- jQuery sticky menu -->
+        <!-- build:js ./administrador.min.js -->
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/login.js"></script>
@@ -396,6 +397,7 @@
         <script src="js/jquery.jqGrid.min.js"></script>
         <script src="js/tablasjqgrid.js"></script>
         <script src="js/formjqgrid.js"></script>
+        <!-- endbuild -->
         <!-- jQuery easing -->
         <script src="js/jquery.easing.1.3.min.js"></script>
         <!-- Main Script -->

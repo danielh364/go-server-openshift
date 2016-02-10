@@ -358,6 +358,7 @@
         <script src="js/bootstrap.min.js"></script>
 
         <!-- jQuery sticky menu -->
+          <!-- build:js ./perfil.min.js -->
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/login-register.js"></script>
@@ -368,7 +369,7 @@
         <script src="js/categorias.js"></script>
         <script src="js/articulos.js"></script>
         <script src="js/perfilready.js"></script>
-
+        <!-- endbuild -->
         <!-- jQuery easing -->
         <script src="js/jquery.easing.1.3.min.js"></script>
 
