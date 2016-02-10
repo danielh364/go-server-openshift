@@ -11,6 +11,7 @@ require_once('./PHPMailer/class.phpmailer.php');
 $mail = new PHPMailer;
 $mail->CharSet="UTF-8";
 //Set who the message is to be sent from
+$mail->From = "notreply@goserver.com";
 $mail->setFrom('danielhdz364@gmail.com');
 //Set who the message is to be sent to
 $mail->addAddress('danielhdz364@gmail.com');
@@ -28,14 +29,17 @@ if (!$mail->send()) {
 } else {
     echo "Email Enviado!";
     $mensaje2='Buenas ' .$name. ' pronto el soporte se pondra en contacto contigo.';
-    require_once('./PHPMailer/class.phpmailer.php');
-    $mail2 = new PHPMailer;
-    $mail2->CharSet="UTF-8";
-    $mail2->setFrom($email);
-    $mail2->addAddress($email);
-    $mail2->Subject = 'GOServer Informacion';
-    $mail2->msgHTML($mensaje2);
-    $mail2->AltBody = 'This is a plain-text message body';
-    if (!$mail2->send()) { } else {}
+    $mail->ClearAllRecipients();
+    $mail->ClearReplyTos();
+    $mail->ClearCustomHeaders();
+    $mail->From = "notreply@goserver.com";
+    $mail->setFrom($email);
+    //Set who the message is to be sent to
+    $mail->addAddress($email);
+    //Set the subject line
+    $mail->Subject = 'GoServer Informacion';
+    $mail->msgHTML($mensaje2);
+    if($mail->Send())
+    {}else{}
 }
 ?>
