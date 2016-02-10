@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $('.loginadmin').on('click',loginAjax);
   $.ajax({
       type: "POST",
       url: "seguridad.php",

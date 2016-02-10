@@ -7,6 +7,33 @@ $(document).ready(function () {
   });
 
 
+$('.cerrarsession').on('click',cerrarsession);
+$('.tabla1').on('click',tablaClientes);
+$('.tabla2').on('click',tablaAdministradores);
+$('.tabla3').on('click',tablaArticulos);
+$('.tabla4').on('click',tablaCategorias);
+$('.tabla5').on('click',tablaPedidos);
+
+//Botones Clientes
+$('.formaltacliente').on('click',AltaCliente);
+$('.clientepasswordmodal').on('click',openFormClientesPasswordModal);
+$('.modificarperfil').on('click',modificarPerfil);
+$('.userpasswordmod').on('click',cambiarUserPassword);
+$('.clientemodal').on('click',openForModificarClientesModal);
+//Botones Administrador
+$('.altaadministrador').on('click',AltaAdministrador);
+$('.adminpassword').on('click',cambiarAdminPassword);
+
+//Botones Articulos
+$('.altaarticulo').on('click',AltaArticulo);
+$('.artfotomodal').on('click',openFormArticulosFotoModal);
+$('.modarticulo').on('click',ModificarArticulo);
+$('.insertarfoto').on('click',insertarFoto);
+
+//Botones categorias
+$('.altacategoria').on('click',AltaCategoria);
+$('.modcategoria').on('click',modificarCategoria);
+
   document.getElementById("menujqgrid").style.display = 'none';
 
   $(".nav a").on("click", function () {

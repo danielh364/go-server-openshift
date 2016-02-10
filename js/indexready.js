@@ -1,14 +1,17 @@
 $(document).ready(function () {
     $.cookieBar();
-    $('.identificate').click(openLoginModal);
-    $('.registrarse').click(openRegisterModal);
-    $('.loginboton').click(loginAjax);
-    $('.botonregistro').click(registro);
-    $( ".carritodrop" ).click(function() {
+    $('.identificate').on('click',openLoginModal);
+    $('.registrarse').on('click',openRegisterModal);
+    $('.loginboton').on('click',loginAjax);
+    $('.botonregistro').on('click',registro);
+    $('.funcionmodalcarrito').on('click',CarritoModal);
+    $('.carritodrop').on('click',  function () {
       desplegablecarrito();
       CerrarModal();
+    });
+    $('.loginform').on('click',showLoginForm);
+    $('.registerform').on('click',showRegisterForm);
 });
-    $('.funcionmodalcarrito').click(CarritoModal);
     comprobarsession();
 
     $("#arrow-up").hide();

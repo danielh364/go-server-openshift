@@ -1,12 +1,15 @@
 $(document).ready(function () {
-    $('.identificate').click(openLoginModal);
-    $('.registrarse').click(openRegisterModal);
-    $('.loginboton').click(loginAjax);
-    $('.botonregistro').click(registro);
-    $( ".carritodrop" ).click(function() {
-      desplegablecarrito();
-      CerrarModal();
-});
-    $('.funcionmodalcarrito').click(CarritoModal);
-      $('.emailbutton').click(enviarEmailContacto);
+  $('.identificate').on('click',openLoginModal);
+  $('.registrarse').on('click',openRegisterModal);
+  $('.loginboton').on('click',loginAjax);
+  $('.botonregistro').on('click',registro);
+  $('.carritodrop').on('click',  function () {
+    desplegablecarrito();
+    CerrarModal();
+  });
+  
+  $('.funcionmodalcarrito').on('click',CarritoModal);
+  $('.loginform').on('click',showLoginForm);
+  $('.registerform').on('click',showRegisterForm);
+  $('.emailbutton').on('click',enviarEmailContacto);
 });

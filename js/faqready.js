@@ -8,4 +8,8 @@ $(document).ready(function () {
       CerrarModal();
 });
     $('.funcionmodalcarrito').click(CarritoModal);
+
+    $('.loginform').on('click',showLoginForm);
+    $('.registerform').on('click',showRegisterForm);
+
 });

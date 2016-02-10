@@ -46,7 +46,7 @@
                     <div class="col-md-4, col-md-offset-4">
                         <div class="user-menu">
                             <ul>
-                                <li><a data-toggle="modal" href="javascript:void(0)" onclick="cerrarsession();"><i class="fa fa-user"></i> Salir</a></li>
+                                <li><a data-toggle="modal" href="javascript:void(0)"class="cerrarsession"><i class="fa fa-user"></i> Salir</a></li>
                             </ul>
                         </div>
                     </div>
@@ -83,11 +83,11 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a onclick="tablaClientes();" href="#">Clientes</a></li>
-                            <li><a onclick="tablaAdministradores();" href="#">Administradores</a></li>
-                            <li><a onclick="tablaArticulos();" href="#">Articulos</a></li>
-                            <li><a onclick="tablaCategorias();" href="#">Categorias</a></li>
-                            <li><a onclick="tablaPedidos();" href="#">Pedidos</a></li>
+                            <li><a class="tabla1"  href="#">Clientes</a></li>
+                            <li><a class="tabla2"  href="#">Administradores</a></li>
+                            <li><a class="tabla3"  href="#">Articulos</a></li>
+                            <li><a class="tabla4"  href="#">Categorias</a></li>
+                            <li><a class="tabla5" href="#">Pedidos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                                                           <input id="passwordc" class="form-control" type="password" placeholder="Contraseña" name="password">
                                                           <input id="emailc" class="form-control" type="text" placeholder="Email" name="email">
                                                         <div class="mensajeformulario"></div>
-                                                            <input class="btn btn-default btn-login" value="Crear Cliente" name="buttonformulario" onclick="AltaCliente()">
+                                                            <input class="btn btn-default btn-login formaltacliente" value="Crear Cliente" name="buttonformulario">
                                                         </form>
                                                       </div>
 
@@ -187,9 +187,9 @@
                                                         <label  class="tooltipp" ><input id="apellidosm" class="form-control" type="text" placeholder="Apellidos" name="apellidos"><span>Apellidos</span> </label>
                                                         <label  class="tooltipp" ><input id="emailm" class="form-control" type="text" placeholder="Email" name="email"><span>Email</span> </label>
                                                         <div class="mensajeformulario"></div>
-                                                        <input class="btn btn-default btn-login" value="Modificar Contraseña" name="buttonpassword" onclick="openFormClientesPasswordModal()">
+                                                        <input class="btn btn-default btn-login clientepasswordmodal" value="Modificar Contraseña" name="buttonpassword">
                                                         <br />
-                                                        <input class="btn btn-default btn-login" value="Modificar Cliente" name="buttonformulario" onclick="modificarPerfil()">
+                                                        <input class="btn btn-default btn-login modificarperfil" value="Modificar Cliente" name="buttonformulario">
                                                         </form>
                                                       </div>
 
@@ -201,9 +201,9 @@
                                                           <input id="passwordm1" class="form-control" type="password" placeholder="Nueva Contraseña" name="password1">
                                                           <input id="passwordm2" class="form-control" type="password" placeholder="Repetir Contraseña" name="password2">
                                                         <div class="mensajeformulario"></div>
-                                                        <input class="btn btn-default btn-login" value="Cambiar Contraseña" name="buttonformulario" onclick="cambiarUserPassword()">
+                                                        <input class="btn btn-default btn-login userpasswordmod" value="Cambiar Contraseña" name="buttonformulario">
                                                         <br />
-                                                        <input class="btn btn-default btn-login" value="Volver" name="buttonvolver" onclick="openForModificarClientesModal()">
+                                                        <input class="btn btn-default btn-login clientemodal" value="Volver" name="buttonvolver">
                                                         </form>
                                                       </div>
 
@@ -212,7 +212,7 @@
                                                           <input id="usuarioA" class="form-control" type="text" placeholder="usuario" name="usuario">
                                                           <input id="passwordA" class="form-control" type="password" placeholder="Contraseña" name="password">
                                                         <div class="mensajeformulario"></div>
-                                                            <input class="btn btn-default btn-login" value="Crear Administrador" name="buttonformulario" onclick="AltaAdministrador()">
+                                                            <input class="btn btn-default btn-login altaadministrador" value="Crear Administrador" name="buttonformulario">
                                                         </form>
                                                       </div>
 
@@ -224,7 +224,7 @@
                                                           <input id="Apasswordm1" class="form-control" type="password" placeholder="Nueva Contraseña" name="password1">
                                                           <input id="Apasswordm2" class="form-control" type="password" placeholder="Repetir Contraseña" name="password2">
                                                         <div class="mensajeformulario"></div>
-                                                        <input class="btn btn-default btn-login" value="Cambiar Contraseña" name="buttonformulario" onclick="cambiarAdminPassword()">
+                                                        <input class="btn btn-default btn-login adminpassword" value="Cambiar Contraseña" name="buttonformulario">
                                                         <br />
                                                         </form>
                                                       </div>
@@ -240,7 +240,7 @@
                                                           <input id="imagenN" class="form-control" type="text" placeholder="Imagen" name="imagen">
                                                           <input id="descripcionN" class="form-control" type="text" placeholder="Descripcion" name="descripcion">
                                                         <div class="mensajeformulario"></div>
-                                                            <input class="btn btn-default btn-login" value="Crear Articulo" name="buttonformulario" onclick="AltaArticulo()">
+                                                            <input class="btn btn-default btn-login altaarticulo" value="Crear Articulo" name="buttonformulario">
                                                         </form>
                                                       </div>
 
@@ -261,9 +261,9 @@
                                                           <label  class="tooltipp" >
                                                           <input id="descripcionM" class="form-control" type="text" placeholder="Descripcion" name="descripcion"><span>Descripcion</span> </label>
                                                         <div class="mensajeformulario"></div>
-                                                            <input class="btn btn-default btn-login" value="Subir Imagen" name="buttonimagen" onclick="openFormArticulosFotodModal()">
+                                                            <input class="btn btn-default btn-login artfotomodal" value="Subir Imagen" name="buttonimagen">
                                                             <br />
-                                                            <input class="btn btn-default btn-login" value="Modificar Articulo" name="buttonformulario" onclick="ModificarArticulo()">
+                                                            <input class="btn btn-default btn-login modarticulo" value="Modificar Articulo" name="buttonformulario">
                                                         </form>
                                                       </div>
 
@@ -271,7 +271,7 @@
                                                          <form id="formularioArticuloImagen" enctype="multipart/form-data" action="./dao/articuloUpload.php" method="POST"  accept-charset="UTF-8">
                                                            <input  id="articulofoto" class="form-control" name="uploadedfile" type="file" />
                                                            <div class="mensajeformulario"></div>
-                                                           <input class="btn btn-default btn-login" type="submit" value="Subir archivo" onclick="insertarFoto()" />
+                                                           <input class="btn btn-default btn-login insertarfoto" type="submit" value="Subir archivo"/>
                                                           </form>
                                                       </div>
 
@@ -280,7 +280,7 @@
                                                          <form id="formularioCategoriaNueva" method="post"  accept-charset="UTF-8">
                                                           <input id="nombrecategoriaN" class="form-control" type="text" placeholder="Nombre Categoria" name="nombrecategoria">
                                                         <div class="mensajeformulario"></div>
-                                                            <input class="btn btn-default btn-login" value="Crear Categoria" name="buttonformulario" onclick="AltaCategoria()">
+                                                            <input class="btn btn-default btn-login altacategoria" value="Crear Categoria" name="buttonformulario">
                                                         </form>
                                                       </div>
 
@@ -290,7 +290,7 @@
                                                           <input id="idcategoriaoculta" class="form-control" type="text" placeholder="Id Categoria"  name="idcategoria">
                                                           <label  class="tooltipp" ><input id="nombrecategoria" class="form-control" type="text" placeholder="Nombre Categoria" name="nombrecategoria"> <span>Categoria</span> </label>
                                                         <div class="mensajeformulario"></div>
-                                                          <input class="btn btn-default btn-login" value="Modificar Categoria" name="buttonformulario" onclick="modificarCategoria()">
+                                                          <input class="btn btn-default btn-login modcategoria" value="Modificar Categoria" name="buttonformulario">
                                                         </form>
                                                       </div>
                                                     </div>
@@ -392,11 +392,11 @@
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/login.js"></script>
-        <script src="js/funcionesBotones.js"></script>
         <script src="js/grid.locale-es.js"></script>
         <script src="js/jquery.jqGrid.min.js"></script>
         <script src="js/tablasjqgrid.js"></script>
         <script src="js/formjqgrid.js"></script>
+        <script src="js/funcionesBotones.js"></script>
         <!-- endbuild -->
         <!-- jQuery easing -->
         <script src="js/jquery.easing.1.3.min.js"></script>

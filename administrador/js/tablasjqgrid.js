@@ -63,7 +63,7 @@ function tablaArticulos() {
     colNames: ["idarticulo", "categoria", "titulo","precio","stock","imagen","descripcion"],
   colModel: [
   { name: "id",index:'idarticulo', align:"center",hidden: true},
-  { name: "categoria",index:'categoria',  align:"center",width:90},
+  { name: "categoria",index:'categoria',  align:"center",width:120},
   { name: "titulo",index:'titulo', align:"center", width:150},
   { name: "precio",index:'precio', align:"center", width:50},
   { name: "stock",index:'stock',  align:"center",width:50},

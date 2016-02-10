@@ -2,7 +2,34 @@ $(document).ready(function () {
     comprobarsession();
     verPerfil();
     carrito = JSON.parse(sessionStorage.getItem('tcarrito'));
+
+
+    $('#facturasusuario').on('click',formularioFactura);
+    $('#miperfil').on('click',formularioperfil);
+    $('.identificate').on('click',openLoginModal);
+    $('.registrarse').on('click',openRegisterModal);
+    $('.loginboton').on('click',loginAjax);
+    $('.botonregistro').on('click',registro);
+    $('.carritodrop').on('click',  function () {
+      desplegablecarrito();
+      CerrarModal();
+    });
+
+
+    $('.funcionmodalcarrito').on('click',CarritoModal);
+    $('.changepassmodal').on('click',openchangepassModal);
+    $('.modificarperfil').on('click',modificarPerfil);
+    $('.changeuserpass').on('click',cambiarUserPassword);
+
+    $('.perfilredirect').on('click',  function () {
+        window.location.href = '/index.html';
+    });
+    
+    $('.loginform').on('click',showLoginForm);
+    $('.registerform').on('click',showRegisterForm);
+
 });
+
 
 function formularioperfil() {
     document.getElementById("formularioperfil").style.display = 'block';

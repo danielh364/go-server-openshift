@@ -42,8 +42,8 @@
                     <div class="col-md-4, col-md-offset-4">
                         <div class="user-menu">
                             <ul>
-                                <li><a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"><i class="fa fa-user"></i>Identificate</a></li>
-                                <li><a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();"><i class="fa fa-user"></i> Registrarse</a></li>
+                                <li><a data-toggle="modal" href="javascript:void(0)" class="identificate"><i class="fa fa-user"></i>Identificate</a></li>
+                                <li><a data-toggle="modal" href="javascript:void(0)" class="registrarse"><i class="fa fa-user"></i> Registrarse</a></li>
                             </ul>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                         <input id="usuarioAcc" class="form-control" type="text" placeholder="Usuario" name="usuario">
                                         <input id="passwordAcc" class="form-control" type="password" placeholder="Contraseña" name="password">
                                         <div class="mensajeformulario"></div>
-                                        <input class="btn btn-default btn-login" value="Acceder Cuenta" name="buttonformulario" onclick="loginAjax()">
+                                        <input class="btn btn-default btn-login loginboton" value="Acceder Cuenta" name="buttonformulario" >
                                     </form>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                         <input id="emailr" class="form-control" type="text" placeholder="Email" name="email">
                                         <input id="passwordr" class="form-control" type="password" placeholder="Contraseña" name="password">
                                         <div class="mensajeformulario"></div>
-                                        <input class="btn btn-default btn-register"  value="Crear Cuenta" name="buttonformulario" onclick="registro();"  >
+                                        <input class="btn btn-default btn-register botonregistro"  value="Crear Cuenta" name="buttonformulario" >
                                     </form>
                                 </div>
                             </div>
@@ -93,12 +93,12 @@
                     <div class="modal-footer">
                         <div class="forgot login-footer">
                             <span>Crear una
-                                <a href="javascript: showRegisterForm();"> Cuenta</a>
+                                <a class="registerform" href="javascript:void(0)"> Cuenta</a>
                                 ?</span>
                         </div>
                         <div class="forgot register-footer" style="display:none">
                             <span>Ya tienes una cuenta?</span>
-                            <a href="javascript: showLoginForm();">Identificate</a>
+                            <a class="loginform" href="javascript:void(0)">Identificate</a>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
 
                             <li class="dropdown">
                                 <span >Total - </span> <span class="cart-amunt">0€</span> <span class="product-count"> 0 </span>
-                                <a href="#"  class="dropdown-toggle"  onclick="desplegablecarrito(), CerrarModal();" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-cart"></span><span class="caret"></span></a>
+                                <a href="#"  class="dropdown-toggle carritodrop" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-cart"></span><span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-cart" role="menu">
 
                                     <div class="carro">
@@ -129,7 +129,7 @@
 
                                     <li class="divider"></li>
                                     <div id="botonmodal">
-                                        <button type="button" class="btn btn-info btn-md, bmodal" data-toggle="modal" data-target="#myModal" onclick="CarritoModal()">Ver Carrito</button>
+                                        <button type="button" class="btn btn-info btn-md, bmodal funcionmodalcarrito" data-toggle="modal" data-target="#myModal">Ver Carrito</button>
                                     </div>
                                 </ul>
 
@@ -207,9 +207,9 @@
                             <ul>
                                 <!-- Aqui van las categorias pintadas recogidas del php (AJAX) -->
                                 <div id="perfil">
-                                    <a href="#" onclick="formularioperfil();">Mi Perfil</a>
+                                    <a id="miperfil" href="#">Mi Perfil</a>
                                     <br />
-                                    <a href="#" onclick="formularioFactura();">Facturas</a>
+                                    <a id="facturasusuario" href="#">Facturas</a>
                                 </div>
                             </ul>
                         </div>
@@ -243,16 +243,16 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"></label>
                                     <div class="col-md-8">
-                                        <input type="button" onclick="openchangepassModal();" class="btn btn-primary" value="Modificar Contraseña">
+                                        <input type="button" class="btn btn-primary changepassmodal" value="Modificar Contraseña">
                                         <span></span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"></label>
                                     <div class="col-md-8">
-                                        <input class="btn btn-primary" name="buttonformulario"  value="Guardar Cambios" onclick="modificarPerfil();">
+                                        <input class="btn btn-primary modificarperfil" name="buttonformulario"  value="Guardar Cambios">
                                         <span></span>
-                                        <a onclick="window.location.href = '/index.html'"><input type="reset" class="btn btn-default" value="Cancelar"></a>
+                                        <a class="perfilredirect"><input type="reset" class="btn btn-default" value="Cancelar"></a>
                                     </div>
                                 </div>
                             </form>
@@ -287,7 +287,7 @@
                                         <label>Repetir Contraseña:</label>
                                         <input id="passwordc2" class="form-control" type="password" placeholder="Repetir Contraseña" name="password2">
                                         <div class="mensajeformulario"></div>
-                                        <input class="btn btn-default btn-login" value="Cambiar Contraseña" name="buttonformulario" onclick="cambiarUserPassword();">
+                                        <input class="btn btn-default btn-login changeuserpass" value="Cambiar Contraseña" name="buttonformulario">
                                     </form>
                                 </div>
                             </div>
