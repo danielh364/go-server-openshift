@@ -6,7 +6,7 @@ mysql_select_db('goserver') or die('No se pudo seleccionar la base de datos');
 
 session_start();
 $usuario = $_SESSION['usuario'];
-$query = "select idPedido,Fecha,Total from pedidos where Usuario='$usuario'";
+$query = "select idPedido,Fecha,Total from pedidos where Usuario='$usuario' and Pagado='SI'";
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
   if (mysql_num_rows($result) > 0) {
 

@@ -6,7 +6,6 @@ $message = $_POST['message'];
 $mensaje='Buenas ' .$name. ' pronto el soporte se pondra en contacto contigo.';;
 
 require_once('./PHPMailer/class.phpmailer.php');
-
 //Create a new PHPMailer instance
 $mail2 = new PHPMailer;
 $mail2->CharSet="UTF-8";
