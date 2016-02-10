@@ -12,7 +12,7 @@ function tablaClientes() {
   { name: "usuario",index:'usuario', align:"center",width:150},
   { name: "nombre",index:'nombre',  align:"center",width:150},
   { name: "apellidos",index:'apellidos', align:"center", width:150},
-  { name: "password",index:'password', width:150},
+  { name: "password",index:'password', hidden: true},
   { name: "email",index:'email',  align:"center",width:180}
   ],
      	rowNum:5,
@@ -38,8 +38,8 @@ function tablaAdministradores(){
   	datatype: "json",
     colNames: ["usuario","password"],
   colModel: [
-  { name: "usuario",index:'usuario', align:"center",width:150},
-  { name: "password",index:'password', width:250}
+  { name: "usuario",index:'usuario', align:"center",width:650},
+  { name: "password",index:'password', hidden: true}
   ],
      	rowNum:5,
      	rowList:[5,10,15],
@@ -62,13 +62,13 @@ function tablaArticulos() {
   	datatype: "json",
     colNames: ["idarticulo", "categoria", "titulo","precio","stock","imagen","descripcion"],
   colModel: [
-  { name: "id",index:'idarticulo', align:"center",width:30},
+  { name: "id",index:'idarticulo', align:"center",hidden: true},
   { name: "categoria",index:'categoria',  align:"center",width:90},
   { name: "titulo",index:'titulo', align:"center", width:150},
-  { name: "precio",index:'precio', width:50},
+  { name: "precio",index:'precio', align:"center", width:50},
   { name: "stock",index:'stock',  align:"center",width:50},
   { name: "imagen",index:'imagen',  align:"left",width:150},
-  { name: "descripcion",index:'descripcion',  align:"left",width:300}
+  { name: "descripcion",index:'descripcion',  align:"left",width:550}
   ],
      	rowNum:10,
      	rowList:[10,20,30,40],
@@ -94,8 +94,8 @@ function tablaCategorias() {
   	datatype: "json",
     colNames: ["idcategoria", "nombre"],
   colModel: [
-  { name: "idcategoria",index:'idcategoria', align:"center",width:150},
-  { name: "nombre",index:'nombre',  align:"center",width:160}
+  { name: "idcategoria",index:'idcategoria', align:"center",hidden: true},
+  { name: "nombre",index:'nombre',  align:"center",width:650}
   ],
      	rowNum:5,
      	rowList:[5,10,15,20],
@@ -157,8 +157,8 @@ function tablaPedidos() {
   	datatype: "json",
      	colNames:['idpedido','idarticulo','titulo','unidades','precio'],
      	colModel:[
-     		{name:'idpedido',index:'idpedido', width:70, align:"center"},
-     		{name:'idarticulo',index:'idarticulo', width:70, align:"center"},
+     		{name:'idpedido',index:'idpedido', width:70, hidden: true},
+     		{name:'idarticulo',index:'idarticulo', width:70, hidden: true},
      		{name:'titulo',index:'titulo', width:200, align:"center"},
      		{name:'unidades',index:'unidades', width:80, align:"center"},
      		{name:'precio',index:'precio', width:80, align:"center"}
