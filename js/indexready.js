@@ -1,4 +1,3 @@
-var arrow=1;
 $(document).ready(function () {
     $.cookieBar();
     $('.identificate').click(openLoginModal);
@@ -52,7 +51,5 @@ $(document).ready(function () {
   			return false;
   		});
   	});
-
-
 
   });

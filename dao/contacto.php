@@ -28,6 +28,18 @@ $mail->AltBody = 'This is a plain-text message body';
 if (!$mail->send()) {
     echo "Error al enviar el Email";
 } else {
+
     echo "Email Enviado!";
+    $mensaje2='Buenas ' .$name. ' pronto el soporte se pondra en contacto contigo.';
+    require_once('./PHPMailer/class.phpmailer.php');
+    $mail2 = new PHPMailer;
+    $mail2->CharSet="UTF-8";
+    $mail2->setFrom($email);
+    $mail2->addReplyTo($email);
+    $mail2->addAddress($email);
+    $mail2->Subject = 'GOServer Informacion';
+    $mail2->msgHTML($mensaje2);
+    $mail2->AltBody = 'This is a plain-text message body';
+
 }
 ?>
