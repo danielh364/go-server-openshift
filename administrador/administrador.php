@@ -142,8 +142,9 @@
                                 <a href="#" id="categorias3">Eliminar</a><br />
                                 </div>
                                 <div id="menupedidos">
-                                <img id="imgfactura" src="img/facturas.png" alt="Facturas">
+                                <img id="imgfactura" src="img/facturas.png" alt="Facturas" />
                                 <a href="#" align=center id="actualizarpedidos">Actualizar</a><br />
+                                <a href="#" align=center id="eliminarPedidos">Eliminar pedidos incompletos</a><br />
                                 </div>
                             </ul>
                         </div>

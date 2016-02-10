@@ -178,9 +178,25 @@ jQuery("#articulos4").click( function(){
         });
 
 
-
+//Actualizar pedidos
         jQuery("#actualizarpedidos").click( function(){
           $("#tablapedidos").trigger("reloadGrid");
         });
+
+//Eliminar pedidos incompletos
+jQuery("#eliminarPedidos").click( function(){
+
+          $.ajax({
+              type: "POST",
+              url: "./dao/pedidosDAO.php",
+                data: 'buttonformulario=Borrar Pedidos',
+              success: function (data) {
+                if(data!=="Se ha borrado correctamente."){
+                sweetAlert("Error",data, "error");}
+                $("#tablapedidos").trigger("reloadGrid");
+              }
+          });
+});
+
 
 });
