@@ -2,31 +2,6 @@
 
 <project name="desplegarOpenshift" default="CommitOpenshift" basedir=".">
     <description>Desplegar Openshift</description>
-
-    <target name="CommitOpenshift">
-      <taskdef  resource="es/logongas/openshift/ant/antlib.xml" />
-
-      <echo> -------------------------------------------------------- </echo>
-      <echo>Mover Archivos</echo>
-      <move todir="${gitlocalpath}/">
-        <fileset dir="./go-server-openshift/">
-          <include name="**/*"/>
-        </fileset>
-      </move>
-      <echo> Borrando  conexion de BD </echo>
-      <delete dir="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
-      <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
-
-      <echo>Renombrando conexion de BD </echo>
-      <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
-      <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
-
-
-  <echo> -------------------------------------------------------- </echo>
-   <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
-   <delete file="${gitlocalpath}/index.php"></delete>
-
-
       <echo> -------------------------------------------------------- </echo>
       <echo> ------------------ Add, Commit-------------------- </echo>
       <git dir="${gitlocalpath}" command="add" options="*" />
