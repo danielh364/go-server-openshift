@@ -30,7 +30,7 @@
           </fileset>
         </move>
 
-        <exec dir="${gitlocalpath}/" executable=".">
+        <exec dir="/tmp/go-server-openshift/daniel/tienda/" executable=".">
             <arg value="gulp.sh"/>
           </exec>
 
