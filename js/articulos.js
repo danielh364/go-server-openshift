@@ -4,7 +4,7 @@ window.onload = function () {
     carrito = new Carrito(1);
     tempcarrito = JSON.parse(sessionStorage.getItem('tcarrito'));
     modal = false;
-
+ 
     if (tempcarrito !== null) {
         carrito.fecha = tempcarrito.fecha;
         carrito.numero = tempcarrito.numero;
@@ -15,6 +15,7 @@ window.onload = function () {
 };
 
 function mostrar_articulos(articulo) {
+
     cont = 0;
     $categoria = articulo;
 
@@ -47,7 +48,6 @@ function mostrar_articulos(articulo) {
                 $('<div class="col-md-4 col-sm-7"> <div class="single-shop-product">  <div class="product-upper" >  <img ondragstart="setdragitem(this, event);" ondragend="cleardragitem();"  src="img/' + articulo1.imagen + '" alt="" ><h2>' + articulo1.titulo + ' </h2><div class="product-carousel-price"> <ins>' + articulo1.precio + ' € /mes</ins> <p>' + articulo1.descripcion + '</p><div class="product-option-shop"> <a  class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="#carrito";>añadir al carrito</a> </div> </div> </div> </div></div>').appendTo('#articulos');
 
             });
-
         }
     });
 }

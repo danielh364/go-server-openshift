@@ -37,8 +37,9 @@ $(document).ready(function () {
 
   		// scroll body to 0px on click
   		$('#arrow-up').click(function () {
-              var marco = Math.floor($(window).scrollTop() / 800);
-              marco = (marco) *600;
+              var marco = Math.floor($(window).scrollTop() / 400);
+              alert ("marco:"+marco);
+              marco = (marco - 1) *400;
   			$('body,html').animate({
   				scrollTop: marco+"px"
   			}, 800);
@@ -46,8 +47,8 @@ $(document).ready(function () {
   		});
 
           $('#arrow-down').click(function () {
-              var marco = Math.floor($(window).scrollTop() / 800);
-              marco = (marco + 2 ) *600;
+              var marco = Math.floor($(window).scrollTop() / 400);
+              marco = (marco + 1 ) *400;
   			$('body,html').animate({
   				scrollTop: marco+"px"
   			}, 800);
