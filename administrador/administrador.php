@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="css/googlefontraleway.css">
         <link rel="stylesheet" href="css/font-mfizz-2.2/font-mfizz.css">
         <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
-        <script src="js/sweetalert.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 
@@ -35,8 +34,6 @@
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
     <body>
@@ -381,14 +378,11 @@
             </div>
         </div>
 
-        <!-- Latest jQuery form server -->
+
+        <!-- build:js ./js/administrador.min.js -->
         <script src="js/jquery-2.1.4.min.js"></script>
-
-        <!-- Bootstrap JS form CDN -->
         <script src="js/bootstrap.min.js"></script>
-
-        <!-- jQuery sticky menu -->
-        <!-- build:js ./administrador.min.js -->
+        <script src="js/sweetalert.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/login.js"></script>
@@ -397,10 +391,9 @@
         <script src="js/tablasjqgrid.js"></script>
         <script src="js/formjqgrid.js"></script>
         <script src="js/funcionesBotones.js"></script>
-        <!-- endbuild -->
-        <!-- jQuery easing -->
         <script src="js/jquery.easing.1.3.min.js"></script>
-        <!-- Main Script -->
         <script src="js/main.js"></script>
+        <!-- endbuild -->
+
     </body>
 </html>

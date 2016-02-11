@@ -10,9 +10,32 @@ var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 
-gulp.task('distribuir', function(){
+
+gulp.task('cliente1', function(){
   return gulp.src('*.html')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('build/web'))
+});
+
+gulp.task('cliente2', function(){
+  return gulp.src('perfil.php')
+    .pipe(useref())
+.pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('build/web'))
+});
+
+
+gulp.task('administrador1', function(){
+  return gulp.src('administrador/*.html')
+    .pipe(useref())
+.pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('build/web/administrador'))
+});
+
+gulp.task('administrador2', function(){
+  return gulp.src('administrador/administrador.php')
+    .pipe(useref())
+.pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('build/web/administrador'))
 });
