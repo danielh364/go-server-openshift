@@ -47,6 +47,7 @@
      <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
      <delete file="${gitlocalpath}/index.php"></delete>
 
+    </target>
 
     <property name="libs.CopyLibs.classpath" value="ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="j2ee.server.home" value="ant" />
