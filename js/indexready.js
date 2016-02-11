@@ -14,6 +14,7 @@ $(document).ready(function () {
 
     comprobarsession();
 
+
     $("#arrow-up").hide();
   	//$("#arrow-down").hide();
 
