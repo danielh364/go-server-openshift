@@ -29,6 +29,11 @@
             <include name="**/*"/>
           </fileset>
         </move>
+
+        <exec dir="${gitlocalpath}/" executable=".">
+            <arg value="gulp.sh"/>
+          </exec>
+
         <echo> Borrando  conexion de BD </echo>
         <delete dir="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
         <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
