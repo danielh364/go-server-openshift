@@ -19,7 +19,7 @@ gulp.task('cliente1', function(){
 });
 
 gulp.task('cliente2', function(){
-  return gulp.src('perfil.php')
+  return gulp.src('*.php')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('build/web'))
@@ -34,7 +34,7 @@ gulp.task('administrador1', function(){
 });
 
 gulp.task('administrador2', function(){
-  return gulp.src('administrador/administrador.php')
+  return gulp.src('administrador/*.php')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('build/web/administrador'))
