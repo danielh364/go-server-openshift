@@ -4,6 +4,7 @@ var dragitem = undefined;
        dragitem=item;
        return true;
    }
+   
    function cleardragitem() {
        dragitem=undefined;
    }

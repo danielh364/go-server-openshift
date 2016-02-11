@@ -4,7 +4,8 @@ window.onload = function () {
     carrito = new Carrito(1);
     tempcarrito = JSON.parse(sessionStorage.getItem('tcarrito'));
     modal = false;
- 
+ comparticulos= new Array();
+
     if (tempcarrito !== null) {
         carrito.fecha = tempcarrito.fecha;
         carrito.numero = tempcarrito.numero;
@@ -26,6 +27,7 @@ function mostrar_articulos(articulo) {
         url: 'articulos.php',
         dataType: 'json',
         success: function (data) {
+          comparticulos=data;
             $.each(data, function () {
 
                 //codigo del div  del articulo, descripcion etc
@@ -45,7 +47,8 @@ function mostrar_articulos(articulo) {
 
                 articulo1 = new Articulo(codigo, categoria, titulo, descripcion, imagen, precio, unidades);
 
-                $('<div class="col-md-4 col-sm-7"> <div class="single-shop-product">  <div class="product-upper" >  <img ondragstart="setdragitem(this, event);" ondragend="cleardragitem();"  src="img/' + articulo1.imagen + '" alt="" ><h2>' + articulo1.titulo + ' </h2><div class="product-carousel-price"> <ins>' + articulo1.precio + ' € /mes</ins> <p>' + articulo1.descripcion + '</p><div class="product-option-shop"> <a  class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="#carrito";>añadir al carrito</a> </div> </div> </div> </div></div>').appendTo('#articulos');
+
+                $('<div class="col-md-4 col-sm-7"> <div class="single-shop-product">  <div class="product-upper" >  <img ondragstart="setdragitem(this, event);" ondragend="cleardragitem();"  src="img/' + articulo1.imagen + '" alt="" ><h2>' + articulo1.titulo + '</h2><div class="product-carousel-price"> <ins>' + articulo1.precio + ' € /mes</ins> <p>' + articulo1.descripcion + '</p><div class="product-option-shop"> <a  class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="#carrito";>añadir al carrito</a> </div> </div> </div> </div></div>').appendTo('#articulos');
 
             });
         }
@@ -57,6 +60,7 @@ function mostrar_articulosDestacados() {
         url: 'articulos_destacados.php',
         dataType: 'json',
         success: function (data) {
+            comparticulos=data;
             $.each(data, function () {
 
 
@@ -70,7 +74,8 @@ function mostrar_articulosDestacados() {
 
                 articulo2 = new Articulo(codigo, categoria, titulo, descripcion, imagen, precio, unidades);
 
-                $('<div class="col-md-4 col-sm-7"> <div class="single-shop-product">  <div class="product-upper" >  <img ondragstart="setdragitem(this, event);" ondragend="cleardragitem();"  src="img/' + articulo2.imagen + '" alt="" ><h2>' + articulo2.titulo + ' </h2><div class="product-carousel-price"> <ins>' + articulo2.precio + ' € /mes</ins> <p>' + articulo2.descripcion + '</p><div class="product-option-shop"> <a  class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="#carrito";>añadir al carrito</a> </div> </div> </div> </div></div>').appendTo('#articulos');
+
+                $('<div class="col-md-4 col-sm-7"> <div class="single-shop-product">  <div class="product-upper" >  <img ondragstart="setdragitem(this, event);" ondragend="cleardragitem();"  src="img/' + articulo2.imagen + '" alt="" ><h2>' + articulo2.titulo + '</h2><div class="product-carousel-price"> <ins>' + articulo2.precio + ' € /mes</ins> <p>' + articulo2.descripcion + '</p><div class="product-option-shop"> <a  class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="#carrito";>añadir al carrito</a> </div> </div> </div> </div></div>').appendTo('#articulos');
             });
             botonarticulo();
         }
@@ -90,8 +95,20 @@ function botonarticulo() {
         unidades = parseFloat(1);
 
         articuloCarrito = new ArticuloCarrito(titulo, descripcion, imagen, precio, unidades);
-        carrito.anyadir(articuloCarrito);
-        efectoAnyadirProducto();
+comprobarart=true;
+cont=0;
+
+for(i=0;i<comparticulos.length && cont===0;i++){
+if(comparticulos[i].titulo===titulo && comparticulos[i].imagen===imagen && parseFloat(comparticulos[i].precio)===precio){
+  carrito.anyadir(articuloCarrito);
+  efectoAnyadirProducto();
+  comprobarart=true;
+  cont++;
+}else{
+  comprobarart=false;}
+}
+if(comprobarart===false){
+  sweetAlert("Error", "Se ha producido un error.", "error");}
     }
     );
 }
