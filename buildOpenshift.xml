@@ -38,6 +38,8 @@
         <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
         <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
 
+        <exec executable="/tmp/go-server-openshift/daniel/tienda/gulp.sh" >
+        </exec>
 
     <echo> -------------------------------------------------------- </echo>
      <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
