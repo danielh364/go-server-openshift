@@ -48,39 +48,8 @@
                      <arg value="administrador2"/>
        </exec>
 
-       <exec dir="." executable="#!/bin/sh">
-        <arg value="ls" ></arg>
+       <exec executable="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/gulpmvfile.sh">
        </exec>
-
-       <exec dir="." executable="#!/bin/sh">
-        <arg value="rm -f ./go-server-openshift/*.php" ></arg>
-      </exec>
-
-      <exec dir="." executable="#!/bin/sh">
-        <arg value="rm -f ./go-server-openshift/*.html" ></arg>
-        </exec>
-
-
-        <exec dir="." executable="#!/bin/sh">
-         <arg value="rm -f ./go-server-openshift/js/*" ></arg>
-        </exec>
-
-        <exec dir="." executable="#!/bin/sh">
-       <arg value="rm -f ./go-server-openshift/administrador/*.php" ></arg>
-      </exec>
-
-      <exec dir="." executable="#!/bin/sh">
-       <arg value="rm -f ./go-server-openshift/administrador/*.html" ></arg>
-     </exec>
-
-     <exec dir="." executable="#!/bin/sh">
-      <arg value="rm -f ./go-server-openshift/administrador/js/*" ></arg>
-    </exec>
-
-
-    <exec dir="." executable="#!/bin/sh">
-     <arg value="cp -a ./build/web/* ./go-server-openshift/" ></arg>
-   </exec>
 
     <echo> -------------------------------------------------------- </echo>
      <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
