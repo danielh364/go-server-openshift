@@ -33,7 +33,7 @@ while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 $cuentaOrigen = $ocarrito->ncuenta;
 $cuentaDestino ='20002000749876543211';
 $importe = $ocarrito->total;
-$concepto = 'GoServer Servicio N· '.$idp;
+$concepto = 'GoServer Servicio Num. '.$idp;
 $pin = '2045';
 
 $data = json_encode(array("cuentaOrigen" => "$cuentaOrigen", "cuentaDestino" => "$cuentaDestino","importe" => "$importe", "concepto" => "$concepto", "pin" => "$pin"));
