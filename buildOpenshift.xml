@@ -50,33 +50,33 @@
 
 
        <exec dir="." executable="/bin/sh">
-        <arg line="rm -f ./go-server-openshift/*.php" >
+        <arg line="rm -f ./go-server-openshift/*.php" ></arg>
       </exec>
-      
+
       <exec dir="." executable="/bin/sh">
-        <arg line="rm -f ./go-server-openshift/*.html" >
+        <arg line="rm -f ./go-server-openshift/*.html" ></arg>
         </exec>
 
 
         <exec dir="." executable="/bin/sh">
-         <arg line="rm -f ./go-server-openshift/js/*" >
+         <arg line="rm -f ./go-server-openshift/js/*" ></arg>
         </exec>
 
         <exec dir="." executable="/bin/sh">
-       <arg line="rm -f ./go-server-openshift/administrador/*.php" >
+       <arg line="rm -f ./go-server-openshift/administrador/*.php" ></arg>
       </exec>
 
       <exec dir="." executable="/bin/sh">
-       <arg line="rm -f ./go-server-openshift/administrador/*.html" >
+       <arg line="rm -f ./go-server-openshift/administrador/*.html" ></arg>
      </exec>
 
      <exec dir="." executable="/bin/sh">
-      <arg line="rm -f ./go-server-openshift/administrador/js/*" >
+      <arg line="rm -f ./go-server-openshift/administrador/js/*" ></arg>
     </exec>
 
 
     <exec dir="." executable="/bin/sh">
-     <arg line="cp -a ./build/web/* ./go-server-openshift/" >
+     <arg line="cp -a ./build/web/* ./go-server-openshift/" ></arg>
    </exec>
 
     <echo> -------------------------------------------------------- </echo>
