@@ -15,14 +15,14 @@ gulp.task('cliente1', function(){
   return gulp.src('*.html')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('build/web/'))
 });
 
 gulp.task('cliente2', function(){
   return gulp.src('*.php')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('build/web/'))
 });
 
 
@@ -30,12 +30,12 @@ gulp.task('administrador1', function(){
   return gulp.src('administrador/*.html')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('./administrador'))
+    .pipe(gulp.dest('build/web/administrador'))
 });
 
 gulp.task('administrador2', function(){
   return gulp.src('administrador/*.php')
     .pipe(useref())
 .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('./administrador'))
+    .pipe(gulp.dest('build/web/administrador'))
 });
