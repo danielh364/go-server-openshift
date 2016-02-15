@@ -38,7 +38,7 @@
         <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
         <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
 
-        <exec executable="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/node/bin/node64" >
+        <exec executable="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/node/bin/node" >
                    <arg value="--max_old_space_size=300"/>
                    <arg value="/tmp/go-server-openshift/daniel/tienda/gulp.js cliente1"/>
                </exec>
