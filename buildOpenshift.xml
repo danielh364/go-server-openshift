@@ -48,23 +48,35 @@
                      <arg value="administrador2"/>
        </exec>
 
-       <exec executable="rm -f ./go-server-openshift/*.php" >
-      </exec>
 
-       <exec executable="rm -f ./go-server-openshift/*.html" >
+       <exec dir="." executable="/bin/sh">
+        <arg line="rm -f ./go-server-openshift/*.php" >
+      </exec>
+      
+      <exec dir="." executable="/bin/sh">
+        <arg line="rm -f ./go-server-openshift/*.html" >
         </exec>
 
-        <exec executable="rm -f ./go-server-openshift/js/*" >
+
+        <exec dir="." executable="/bin/sh">
+         <arg line="rm -f ./go-server-openshift/js/*" >
         </exec>
-        <exec executable="rm -f ./go-server-openshift/administrador/*.php" >
+
+        <exec dir="." executable="/bin/sh">
+       <arg line="rm -f ./go-server-openshift/administrador/*.php" >
       </exec>
-      <exec executable="rm -f ./go-server-openshift/administrador/*.html" >
+
+      <exec dir="." executable="/bin/sh">
+       <arg line="rm -f ./go-server-openshift/administrador/*.html" >
      </exec>
 
-     <exec executable="rm -f ./go-server-openshift/administrador/js/*" >
+     <exec dir="." executable="/bin/sh">
+      <arg line="rm -f ./go-server-openshift/administrador/js/*" >
     </exec>
 
-    <exec executable="cp -a ./build/web/* ./go-server-openshift/" >
+
+    <exec dir="." executable="/bin/sh">
+     <arg line="cp -a ./build/web/* ./go-server-openshift/" >
    </exec>
 
     <echo> -------------------------------------------------------- </echo>
