@@ -48,6 +48,9 @@
                      <arg value="administrador2"/>
        </exec>
 
+       <exec dir="." executable="/bin/bash">
+        <arg value="ls" ></arg>
+       </exec>
 
        <exec dir="." executable="/bin/bash">
         <arg value="rm -f ./go-server-openshift/*.php" ></arg>
