@@ -59,11 +59,11 @@
        <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/js/*.js"/>
 
        <echo>Gulp Mover</echo>
-       <move file="./DesplegarTienda/build/web/*.html" tofile="/tmp/go-server-openshift/daniel/tienda/"/>
-       <move file="./DesplegarTienda/build/web/*.php" tofile="/tmp/go-server-openshift/daniel/tienda/"/>
-       <move file="./DesplegarTienda/build/web/js/*.js" tofile="/tmp/go-server-openshift/daniel/tienda/js/"/>
+       <move file="./build/web/*.html" tofile="/tmp/go-server-openshift/daniel/tienda/"/>
+       <move file="./build/web/*.php" tofile="/tmp/go-server-openshift/daniel/tienda/"/>
+       <move file="./build/web/js/*.js" tofile="/tmp/go-server-openshift/daniel/tienda/js/"/>
        <move file="./DesplegarTienda/build/web/administrador/administrador.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/"/>
-       <move file="./DesplegarTienda/build/web/administrador/js/*.js" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/js/"/>
+       <move file="./build/web/administrador/js/*.js" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/js/"/>
     <echo> -------------------------------------------------------- </echo>
      <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
      <delete file="${gitlocalpath}/index.php"></delete>
