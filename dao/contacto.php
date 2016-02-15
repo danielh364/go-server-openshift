@@ -29,18 +29,5 @@ if (!$mail->send()) {
     echo "Error al enviar el Email";
 } else {
     echo "Email Enviado!";
-    $mensaje2='Buenas ' .$name. ' pronto el soporte se pondra en contacto contigo.';
-    $mail->ClearAllRecipients();
-    $mail->ClearReplyTos();
-    $mail->ClearCustomHeaders();
-
-    $mail->setFrom($email);
-    //Set who the message is to be sent to
-    $mail->addAddress($email);
-    //Set the subject line
-    $mail->Subject = 'GoServer Informacion';
-    $mail->msgHTML($mensaje2);
-    if($mail->Send())
-    {}else{}
 }
 ?>
