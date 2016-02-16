@@ -29,19 +29,19 @@
                 <include name="**/*"/>
             </fileset>
         </move>
-        
+
         <echo> -------------------------------------------------------- </echo>
         <echo> Borrando  conexion de BD </echo>
         <delete dir="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
         <delete dir="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
-        
-        
+
+
         <echo> -------------------------------------------------------- </echo>
         <echo>Renombrando conexion de BD </echo>
         <move file="/tmp/go-server-openshift/daniel/tienda/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/bd/conexion.php"/>
         <move file="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion-servidor.php" tofile="/tmp/go-server-openshift/daniel/tienda/administrador/bd/conexion.php"/>
 
-        
+
         <echo> -------------------------------------------------------- </echo>
         <echo>Ejecutando Gulp</echo>
         <exec executable="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/node/bin/node" >
@@ -52,19 +52,15 @@
             <arg value="administrador1"/>
             <arg value="administrador2"/>
         </exec>
-        
-        
+  
         <echo> -------------------------------------------------------- </echo>
         <echo>Moviendo Archivos minimizados</echo>
         <exec executable="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/DesplegarTienda/gulpmvfile.sh">
         </exec>
 
-
         <echo> -------------------------------------------------------- </echo>
         <echo>Borrar Archivos de Repositorio Inicial OpenShift</echo>
         <delete file="${gitlocalpath}/index.php"></delete>
-
-
 
         <echo> -------------------------------------------------------- </echo>
         <echo> ------------------ Add, Commit-------------------- </echo>
@@ -79,7 +75,6 @@
             privateKeyFile="/var/lib/openshift/56b3375c2d527133e6000207/app-root/data/workspace/ssh/id_rsa"
             path="${gitlocalpath}"
         />
-
 
     </target>
 
